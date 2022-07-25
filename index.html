@@ -5,16 +5,24 @@
 </head>
 <body>
   <aside class="side bar">
-    <header>
+    <header class="ideabox">
     </header>
-    <nav>
+    <nav class="navigation-bar">
+        <h3>Filter Starred Ideas</h3>
+        <button class="show-starred-ideas-button">Show Starred Ideas</button>
     </nav>
   </aside>
-  <section class="form box">
+  <section class="form-box">
     <form>
+      <label for="user-title">Title</label>
+      <input id="user-title" type="text" name="new-idea">
+      <label for="user-body">Body</label>
+      <input id="user-body" type="text" name="new-idea">
+      <button class="save-ideas-button">Save</button>
+      <input class="search-bar" type="text" placeholder="search ideas">
     </form>
   </section>
-  <section class="cards box">
+  <section class="cards-box">
   </section>
 </body>
   <script type="text/javasript" src="main.js"></script>
