@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <title>ideabox</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <aside class="side-bar">
+      <header class="ideabox">
+        <h1>IdeaBox</h1>
+      </header>
+      <nav class="navigation-bar">
+          <h3>Filter Starred Ideas</h3>
+          <button class="show-starred-ideas-button">Show Starred Ideas</button>
+      </nav>
+    </aside>
+    <section class="form-box">
+      <form>
+        <label for="user-title">Title</label>
+        <input id="user-title" type="text" name="new-idea">
+        <label for="user-body">Body</label>
+        <input id="user-body" type="text" name="new-idea">
+        <button class="save-ideas-button">Save</button>
+        <button class="search-button">
+          <img src="assets/FEE-M1_ideabox_redux_icons/search.svg" alt="search icon" />
+        </button>
+        <input class="search-bar" type="text" placeholder="Search ideas">
+      </form>
+    </section>
+    <section class="cards-box">
+      <article class="card">
+        <div class="card-header">
+          <button class="star">
+            <img src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="star" />
+            <img class="hidden-star" src="assets/FEE-M1_ideabox_redux_icons/star-active.svg" alt="star" />
+          </button>
+          <button class="delete">
+            <img src="assets/FEE-M1_ideabox_redux_icons/delete.svg" alt="delete icon" />
+            <img class="hidden-delete" src="assets/FEE-M1_ideabox_redux_icons/delete-active.svg" alt="delete icon" />
+          </button>
+        </div>
+        <h3>Idea title</h3>
+        <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        <div class="comment-bar">
+          <button class="comment">
+            <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
+          </button>
+        </div>
+      </article>
+    </section>
+  </body>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="Ideas.js"></script>
+</html>

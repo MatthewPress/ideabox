@@ -4,12 +4,12 @@
 - Matthew Press:
 ## Tasks
 ### Skeleton HTML
-- metadata
-- 3 sections [sidebar, form, cards box]
-- sidebar (header, filter starred ideas section, button)
-- form (title, body, button, search bar)
-- cards box (space holder)
-- cards (star button, delete button, title, body, comment button)
+X metadata
+X 3 sections [sidebar, form, cards box]
+X sidebar (header, filter starred ideas section, button)
+X form (title, body, button, search bar)
+X cards box (space holder)
+X cards (star button, delete button, title, body, comment button)
 ### Rough CSS while modifying HTML
 - flexbox (cards)
 - grid
@@ -24,4 +24,4 @@
 - Deleting (hang in there)
 - Class for Idea (id, title, body, star)
 - New ideas from the user should be turned into an object instance of the Idea Class and used to update the Data model
-- all ideas added to an array 
+- all ideas added to an array
