@@ -3,6 +3,8 @@ var userTitle = document.querySelector('#user-title')
 var userBody = document.querySelector('#user-body')
 var saveIdeasButton = document.querySelector('.save-ideas-button')
 var cardBox = document.querySelector('.cards-box')
+// var deleteButton = document.querySelector('.delete')
+
 // additional data to use
 var ideas = [];
 
@@ -10,6 +12,12 @@ var ideas = [];
 userTitle.addEventListener('blur', enableButton)
 userBody.addEventListener('blur', enableButton)
 saveIdeasButton.addEventListener('click', validateForm)
+cardBox.addEventListener('click', function(event) {
+  if (event.target.className === 'delete') {
+    deleteCard();
+  }
+} )
+
 
 // functions and event handlers (event targets)
 function createNewIdeas() {
@@ -66,3 +74,22 @@ function validateForm() {
 
   createNewIdeas();
 }
+
+function deleteCard() {
+  console.log('function')
+  for (var i =0; i < ideas.length; i++) {
+    console.log('function')
+    if (ideas[i].id == event.target.id) {
+      ideas.splice(i, 1)
+      console.log('function')
+    }
+  }
+  
+}
+
+// Iteration 3 -
+// will need to delete a new instance when delete button is pressed
+// need to remove the deleted card from the data model
+// and make sure it is removed from the DOM or view as well
+// utilizing event propogation to addEventListener on parent element of the cards
+// event targeting the child elements within -
