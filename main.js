@@ -20,7 +20,7 @@ userBody.value = ""
 cardBox.innerHTML = ""
 for (var i = 0; i < ideas.length; i++) {
   cardBox.innerHTML += `
-  <article class="card">
+  <article class="card" id="${ideas[i].id}">
     <div class="card-header">
       <button class="star">
         <img src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="star" />
@@ -32,8 +32,8 @@ for (var i = 0; i < ideas.length; i++) {
       </button>
     </div>
     <div class="card-body">
-      <h2>Idea title</h2>
-      <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk. Bunch of random shit to keep testing this shit out. Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk. Bunch of random shit to keep testing this shit out.</p>
+      <h2>${ideas[i].title}</h2>
+      <p>${ideas[i].body}</p>
     </div>
     <div class="comment-bar">
       <button class="comment">
@@ -43,6 +43,7 @@ for (var i = 0; i < ideas.length; i++) {
   </article>
   `
 }
+saveIdeasButton.classList.add('disable')
 }
 
 function enableButton() {
