@@ -1,0 +1,106 @@
+/* Body */
+* {
+
+}
+
+body {
+  margin: 0px;
+}
+
+/* Header */
+header {
+   font-family: 'Open Sans Bold';
+   /* font-style: Bold; */
+   background: #1F1F3D;
+   height: 100%;
+   width: 200px;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+}
+
+h1 {
+  color: #E9E9F3;
+}
+
+hr {
+  /* border: 1px solid #E9E9F3; */
+  background: #5356A4;
+}
+
+h3 {
+  color: #BFBFDD;
+}
+
+.show-starred-ideas-button {
+  color: #E9E9F3;
+  background: #5356A4;
+  border: 0px;
+}
+
+/* Form & Cards Box */
+
+.form-box,
+.cards-box {
+  margin-left: 200px;
+}
+
+.search-button,
+.star,
+.delete,
+.comment {
+  border: none;
+  /* Change background to color it's on */
+  /* background: transparent; */
+}
+
+/* Form */
+form {
+  background: #A9AAD2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  color: #1F1F3D;
+}
+
+input {
+  border: 2px solid #1F1F3D;
+}
+
+.save-ideas-button {
+  color: #E9E9F3;
+  background: #1F1F3D;
+  border: 0px;
+}
+/* Cards Box */
+.cards-box {
+  background: #EAEAF4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Cards */
+.card {
+  border: 2px solid #1F1F3D;
+  width: 150px;
+  height: 300px;
+}
+
+h2 {
+  color: #1F1F3D;
+}
+
+.card-header {
+  background: #1F1F3D;
+}
+
+.hidden {
+  display: none !important;
+}
