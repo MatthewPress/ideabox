@@ -1,0 +1,240 @@
+/* General */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Open Sans', san-serif;
+}
+
+button {
+  border: 0px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Bold Fonts */
+header {
+  font-family: 'Open Sans, Bold', sans-serif !important;
+}
+
+label,
+#user-title,
+h2 {
+  font-weight: bold;
+}
+
+/* Font Sizes */
+.show-starred-ideas-button,
+#user-title,
+h2,
+.save-ideas-button {
+  font-size: 1.5em;
+}
+
+#user-body,
+p,
+.search-bar {
+  font-size: 1em;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+/* Font Colors */
+label,
+#user-title,
+#user-body,
+.search-bar,
+.card-body {
+  color: #1F1F3D;
+}
+
+h1,
+.show-starred-ideas-button,
+.save-ideas-button,
+.comment {
+  color: #E9E9F3;
+}
+
+h3 {
+  color: #BFBFDD;
+}
+
+/* Background Colors */
+header,
+.save-ideas-button,
+.search-button,
+.card-header,
+.star,
+.delete {
+  background: #1F1F3D;
+}
+
+.show-starred-ideas-button,
+.comment,
+.comment-bar {
+  background: #5356A4;
+}
+
+.form-box {
+  background: #A9AAD2;
+}
+
+.cards-box {
+  background: #EAEAF4;
+}
+
+.card-body {
+  background: #FFFFFF;
+}
+
+/* Borders and Border Colors */
+/* Card border is styled where it shows up */
+input {
+  border: 2px solid #1F1F3D;
+}
+
+nav {
+  border-top: 1px solid #5356A4;
+  border-bottom: 1px solid #5356A4;
+}
+
+/* Button Pointers */
+.show-starred-ideas-button,
+.save-ideas-button,
+.search-button,
+.star,
+.delete,
+.comment {
+  cursor: pointer;
+}
+
+/* Header */
+header {
+   height: 100%;
+   width: 300px;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+}
+
+h1,
+h3,
+.show-starred-ideas-button {
+  margin: 20px;
+}
+
+.show-starred-ideas-button {
+  width: 260px;
+  height: 50px;
+  margin-top: 0px;
+}
+
+/* Form & Cards Box to account for Header */
+
+.form-box,
+.cards-box {
+  margin-left: 300px;
+}
+
+/* Form */
+form {
+  height: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-title,
+#user-body,
+.save-ideas-button {
+  width: 400px;
+}
+
+#user-title,
+.save-ideas-button,
+.search-bar {
+  height: 50px;
+}
+
+#user-body {
+  height: 100px;
+}
+
+input {
+  margin-bottom: 20px
+}
+
+.save-ideas-button {
+  margin: 0px 0px 20px;
+}
+
+.search-button {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  float: left;
+}
+
+.search-bar {
+  width: 350px;
+}
+
+/* Cards Box */
+.cards-box {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  border: 2px solid #1F1F3D;
+  width: 250px;
+  margin: 20px 20px 0px 0px
+}
+
+.star,
+.delete,
+.comment {
+  width: 40px;
+  height: 40px;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.delete {
+  float: right;
+}
+
+.card-body {
+  height: 170px;
+  padding: 15px;
+  overflow-y: scroll;
+}
+
+h2 {
+  margin: 0px 0px 15px 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+.comment-bar {
+  align-self: end;
+}
