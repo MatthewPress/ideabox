@@ -6,6 +6,6 @@ class Idea {
     this.star: star;
   }
   updateIdea() {
-    this.star = // method will return idea's starred state (boolean) 
+    this.star = // method will return idea's starred state (boolean)
   }
 }
