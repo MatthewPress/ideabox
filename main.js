@@ -43,6 +43,7 @@ for (var i = 0; i < ideas.length; i++) {
   </article>
   `
 }
+saveIdeasButton.classList.add('disable')
 }
 
 function enableButton() {
