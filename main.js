@@ -7,6 +7,8 @@ var cardBox = document.querySelector('.cards-box')
 var ideas = [];
 
 // event listeners
+userTitle.addEventListener('blur', enableButton)
+userBody.addEventListener('blur', enableButton)
 saveIdeasButton.addEventListener('click', validateForm)
 
 // functions and event handlers (event targets)
@@ -43,6 +45,13 @@ for (var i = 0; i < ideas.length; i++) {
 }
 }
 
+function enableButton() {
+  if (userTitle.value === "" || userBody.value === "") {
+    return false
+}
+  saveIdeasButton.classList.remove('disable')
+}
+
 function validateForm() {
   event.preventDefault();
   if (userTitle.value == "") {
@@ -53,5 +62,6 @@ function validateForm() {
     alert ("Body must be filled out");
     return false;
   }
+
   createNewIdeas();
 }

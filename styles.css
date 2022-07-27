@@ -16,6 +16,10 @@ button {
   display: none !important;
 }
 
+.disable {
+  cursor: not-allowed !important;
+  background-color: #4B4B6F !important;
+}
 /* Bold Fonts */
 header {
   font-family: 'Open Sans, Bold', sans-serif !important;
