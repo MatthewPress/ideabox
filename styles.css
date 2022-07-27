@@ -1,16 +1,21 @@
 /* Body */
 * {
-
+  box-sizing: border-box;
 }
 
 body {
   margin: 0px;
+  font-family: 'Open Sans', san-serif;
+}
+
+button {
+  border: 0px;
+
 }
 
 /* Header */
 header {
-   font-family: 'Open Sans Bold';
-   /* font-style: Bold; */
+   font-family: 'Open Sans, Bold', sans-serif !important;
    background: #1F1F3D;
    height: 100%;
    width: 200px;
@@ -37,7 +42,6 @@ h3 {
 .show-starred-ideas-button {
   color: #E9E9F3;
   background: #5356A4;
-  border: 0px;
 }
 
 /* Form & Cards Box */
@@ -45,15 +49,6 @@ h3 {
 .form-box,
 .cards-box {
   margin-left: 200px;
-}
-
-.search-button,
-.star,
-.delete,
-.comment {
-  border: none;
-  /* Change background to color it's on */
-  /* background: transparent; */
 }
 
 /* Form */
@@ -76,8 +71,14 @@ input {
 .save-ideas-button {
   color: #E9E9F3;
   background: #1F1F3D;
-  border: 0px;
 }
+
+.search-button {
+  background: #1F1F3D;
+  width: 30px;
+  height: 30px;
+}
+
 /* Cards Box */
 .cards-box {
   background: #EAEAF4;
@@ -91,6 +92,15 @@ input {
   border: 2px solid #1F1F3D;
   width: 150px;
   height: 300px;
+  margin: 10px;
+}
+
+.star,
+.delete,
+.comment {
+  background: transparent;
+  width: 30px;
+  height: 30px;
 }
 
 h2 {
@@ -99,6 +109,11 @@ h2 {
 
 .card-header {
   background: #1F1F3D;
+}
+
+.comment-bar {
+  background:
+  align-self: end;
 }
 
 .hidden {
