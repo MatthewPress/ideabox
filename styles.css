@@ -1,4 +1,6 @@
-/* Body */
+/* margin: top right bottom left; */
+
+/* General */
 * {
   box-sizing: border-box;
 }
@@ -10,13 +12,108 @@ body {
 
 button {
   border: 0px;
+}
 
+.hidden {
+  display: none !important;
+}
+
+/* Bold Fonts */
+header,
+#user-title,
+h2 {
+  font-family: 'Open Sans, Bold', sans-serif !important;
+}
+
+/* Background Colors */
+header,
+.save-ideas-button,
+.search-button,
+.card-header,
+.star,
+.delete {
+  background: #1F1F3D;
+}
+
+.show-starred-ideas-button,
+.comment,
+.comment-bar {
+  background: #5356A4;
+}
+
+.form-box {
+  background: #A9AAD2;
+}
+
+.cards-box {
+  background: #EAEAF4;
+}
+
+.card-body {
+  background: #FFFFFF;
+}
+
+/* Borders and Border Colors */
+/* Card border is styled where it shows up */
+input {
+  border: 2px solid #1F1F3D;
+}
+
+nav {
+  border-top: 1px solid #5356A4;
+  border-bottom: 1px solid #5356A4;
+}
+
+/* Font Colors */
+label,
+#user-title,
+#user-body,
+.search-bar,
+.card-body {
+  color: #1F1F3D;
+}
+
+h1,
+.show-starred-ideas-button,
+.save-ideas-button,
+.comment {
+  color: #E9E9F3;
+}
+
+h3 {
+  color: #BFBFDD;
+}
+
+/* Font Sizes */
+.show-starred-ideas-button,
+#user-title,
+h2,
+.save-ideas-button {
+  font-size: 1.5em;
+}
+
+#user-body,
+p,
+.search-bar {
+  font-size: 1em;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+/* Button Pointers */
+.show-starred-ideas-button,
+.save-ideas-button,
+.search-button,
+.star,
+.delete,
+.comment {
+  cursor: pointer;
 }
 
 /* Header */
 header {
-   font-family: 'Open Sans, Bold', sans-serif !important;
-   background: #1F1F3D;
    height: 100%;
    width: 300px;
    position: fixed;
@@ -32,29 +129,13 @@ h3,
   margin: 20px;
 }
 
-h1 {
-  color: #E9E9F3;
-}
-
-nav {
-  border-top: 1px solid #5356A4;
-  border-bottom: 1px solid #5356A4;
-}
-
-h3 {
-  color: #BFBFDD;
-}
-
 .show-starred-ideas-button {
-  font-size: 1.5em;
-  color: #E9E9F3;
-  background: #5356A4;
   width: 260px;
   height: 50px;
   margin-top: 0px;
 }
 
-/* Form & Cards Box */
+/* Form & Cards Box to account for Header */
 
 .form-box,
 .cards-box {
@@ -63,72 +144,88 @@ h3 {
 
 /* Form */
 form {
-  background: #A9AAD2;
+  height: 400px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-label {
-  color: #1F1F3D;
+#user-title,
+#user-body,
+.save-ideas-button {
+  width: 400px;
+}
+
+#user-title,
+.save-ideas-button,
+.search-bar {
+  height: 50px;
+}
+
+#user-body {
+  height: 100px;
 }
 
 input {
-  border: 2px solid #1F1F3D;
+  margin-bottom: 20px
 }
 
 .save-ideas-button {
-  color: #E9E9F3;
-  background: #1F1F3D;
+  margin: 0px 0px 20px;
 }
 
 .search-button {
-  background: #1F1F3D;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  float: left;
+}
+
+.search-bar {
+  width: 350px;
 }
 
 /* Cards Box */
 .cards-box {
-  background: #EAEAF4;
+  padding-left: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px; */
+  justify-content: start;
+  flex-wrap: wrap;
 }
 
 /* Cards */
 .card {
   border: 2px solid #1F1F3D;
-  width: 225px;
-  height: 275px;
-  margin: 10px;
+  width: 250px;
+  margin: 20px 20px 0px 0px
 }
 
 .star,
 .delete,
 .comment {
-  background: transparent;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.delete {
+  float: right;
+}
+
+.card-body {
+  padding: 15px;
 }
 
 h2 {
-  color: #1F1F3D;
+  margin-top: 0px;
 }
 
-.card-header {
-  background: #1F1F3D;
+p {
+  margin-bottom: 0px;
 }
 
 .comment-bar {
-  background:
   align-self: end;
-}
-
-.hidden {
-  display: none !important;
 }

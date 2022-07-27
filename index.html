@@ -24,13 +24,40 @@
         <label for="user-body">Body</label>
         <input id="user-body" type="text" name="new-idea" />
         <button class="save-ideas-button">Save</button>
-        <button class="search-button">
-          <img src="assets/FEE-M1_ideabox_redux_icons/search.svg" alt="search icon" />
-        </button>
-        <input class="search-bar" type="text" placeholder="Search ideas" />
+        <div class="search-container">
+          <button class="search-button">
+            <img src="assets/FEE-M1_ideabox_redux_icons/search.svg" alt="search icon" />
+          </button>
+          <input class="search-bar" type="text" placeholder="Search ideas" />
+        </div>
       </form>
     </section>
     <section class="cards-box">
+
+<!-- Delete out and put in JS -->
+      <article class="card">
+        <div class="card-header">
+          <button class="star">
+            <img src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="star" />
+            <img class="hidden" src="assets/FEE-M1_ideabox_redux_icons/star-active.svg" alt="star" />
+          </button>
+          <button class="delete">
+            <img src="assets/FEE-M1_ideabox_redux_icons/delete.svg" alt="delete icon" />
+            <img class="hidden" src="assets/FEE-M1_ideabox_redux_icons/delete-active.svg" alt="delete icon" />
+          </button>
+        </div>
+        <div class="card-body">
+          <h2>Idea title</h2>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk. Bunch of random shit to keep testing this shit out.</p>
+        </div>
+        <div class="comment-bar">
+          <button class="comment">
+            <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
+            Comment
+          </button>
+        </div>
+      </article>
+<!-- Extra Cards for styling help -->
       <article class="card">
         <div class="card-header">
           <button class="star">
@@ -42,11 +69,14 @@
             <img class="hidden delete" src="assets/FEE-M1_ideabox_redux_icons/delete-active.svg" alt="delete icon" />
           </button>
         </div>
-        <h2>Idea title</h2>
-        <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        <div class="card-body">
+          <h2>Idea title</h2>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </div>
         <div class="comment-bar">
           <button class="comment">
             <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
+            Comment
           </button>
         </div>
       </article>
@@ -61,11 +91,14 @@
             <img class="hidden delete" src="assets/FEE-M1_ideabox_redux_icons/delete-active.svg" alt="delete icon" />
           </button>
         </div>
-        <h2>Idea title</h2>
-        <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        <div class="card-body">
+          <h2>Idea title</h2>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </div>
         <div class="comment-bar">
           <button class="comment">
             <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
+            Comment
           </button>
         </div>
       </article>
@@ -80,33 +113,18 @@
             <img class="hidden delete" src="assets/FEE-M1_ideabox_redux_icons/delete-active.svg" alt="delete icon" />
           </button>
         </div>
-        <h2>Idea title</h2>
-        <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        <div class="card-body">
+          <h2>Idea title</h2>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </div>
         <div class="comment-bar">
           <button class="comment">
             <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
+            Comment
           </button>
         </div>
       </article>
-      <article class="card">
-        <div class="card-header">
-          <button class="star">
-            <img src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="star" />
-            <img class="hidden star" src="assets/FEE-M1_ideabox_redux_icons/star-active.svg" alt="star" />
-          </button>
-          <button class="delete">
-            <img src="assets/FEE-M1_ideabox_redux_icons/delete.svg" alt="delete icon" />
-            <img class="hidden delete" src="assets/FEE-M1_ideabox_redux_icons/delete-active.svg" alt="delete icon" />
-          </button>
-        </div>
-        <h2>Idea title</h2>
-        <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-        <div class="comment-bar">
-          <button class="comment">
-            <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
-          </button>
-        </div>
-      </article>
+
     </section>
   </body>
   <script type="text/javascript" src="main.js"></script>
