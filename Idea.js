@@ -3,7 +3,7 @@ class Idea {
     this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = star;
+    this.star = star || false;
   }
   updateIdea() {
     this.star;// method will return idea's starred state (boolean)
