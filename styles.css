@@ -26,20 +26,20 @@ header {
 }
 
 label,
-#user-title,
+#new-title,
 h2 {
   font-weight: bold;
 }
 
 /* Font Sizes */
-.show-starred-ideas-button,
-#user-title,
+.show-favs-button,
+#new-title,
 h2,
 .save-ideas-button {
   font-size: 1.5em;
 }
 
-#user-body,
+#new-body,
 p,
 .search-bar {
   font-size: 1em;
@@ -51,15 +51,15 @@ label {
 
 /* Font Colors */
 label,
-#user-title,
-#user-body,
+#new-title,
+#new-body,
 .search-bar,
 .card-body {
   color: #1F1F3D;
 }
 
 h1,
-.show-starred-ideas-button,
+.show-favs-button,
 .save-ideas-button,
 .comment {
   color: #E9E9F3;
@@ -79,7 +79,7 @@ header,
   background: #1F1F3D;
 }
 
-.show-starred-ideas-button,
+.show-favs-button,
 .comment,
 .comment-bar {
   background: #5356A4;
@@ -109,7 +109,7 @@ nav {
 }
 
 /* Button Pointers */
-.show-starred-ideas-button,
+.show-favs-button,
 .save-ideas-button,
 .search-button,
 .star,
@@ -131,11 +131,11 @@ header {
 
 h1,
 h3,
-.show-starred-ideas-button {
+.show-favs-button {
   margin: 20px;
 }
 
-.show-starred-ideas-button {
+.show-favs-button {
   width: 260px;
   height: 50px;
   margin-top: 0px;
@@ -158,19 +158,19 @@ form {
   align-items: center;
 }
 
-#user-title,
-#user-body,
+#new-title,
+#new-body,
 .save-ideas-button {
   width: 400px;
 }
 
-#user-title,
+#new-title,
 .save-ideas-button,
 .search-bar {
   height: 50px;
 }
 
-#user-body {
+#new-body {
   height: 100px;
 }
 
