@@ -9,8 +9,8 @@ var cardBox = document.querySelector('.cards-box');
 var ideas = [];
 
 // event listeners
-userTitle.addEventListener('blur', enableButton);
-userBody.addEventListener('blur', enableButton);
+userTitle.addEventListener('input', enableButton);
+userBody.addEventListener('input', enableButton);
 saveIdeasButton.addEventListener('click', validateForm);
 cardBox.addEventListener('click', deleteCard);
 cardBox.addEventListener('click', favoriteCard);
@@ -58,26 +58,22 @@ function createNewIdeas() {
 }
 
 function enableButton() {
-  if (userTitle.value === "" || userBody.value === "") {
-    return false;
+  if (userTitle.value != "" && userBody.value != "") {
+    console.log("hello")
+    saveIdeasButton.classList.remove('disable');
   }
-
-  saveIdeasButton.classList.remove('disable');
 }
 
 function validateForm() {
   event.preventDefault();
 
-  if (userTitle.value == "") {
+  if (userTitle.value === "") {
     alert ("Title must be filled out");
     return false;
-  }
-
-  if (userBody.value == "") {
+  } else if (userBody.value == "") {
     alert ("Body must be filled out");
     return false;
   }
-
   saveIdeas();
 }
 
