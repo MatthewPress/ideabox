@@ -178,6 +178,10 @@ input {
   margin-bottom: 20px
 }
 
+span {
+  color: #B00C0C;
+}
+
 .save-ideas-button {
   margin: 0px 0px 20px;
 }

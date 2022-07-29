@@ -3,7 +3,6 @@ var userTitle = document.querySelector('#user-title');
 var userBody = document.querySelector('#user-body');
 var saveIdeasButton = document.querySelector('.save-ideas-button');
 var cardBox = document.querySelector('.cards-box');
-// var deleteButton = document.querySelector('.delete')
 
 // additional data to use
 var ideas = [];
@@ -33,12 +32,11 @@ function createNewIdeas() {
     cardBox.innerHTML += `
     <article class="card" id="${ideas[i].id}">
       <div class="card-header">
-        <button class="star">
-          <img class="star-icon" src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="star" />
+        <button class="star" title="Favorite">
+          <img class="star-icon" src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="Not Favorited" />
         </button>
-        <button class="delete">
-          <img class="delete-icon" src="assets/FEE-M1_ideabox_redux_icons/delete.svg" alt="delete icon" />
-          <img class="hidden" src="assets/FEE-M1_ideabox_redux_icons/delete-active.svg" alt="delete icon" />
+        <button class="delete" title="Delete">
+          <img class="delete-icon" src="assets/FEE-M1_ideabox_redux_icons/delete.svg" alt="delete" />
         </button>
       </div>
       <div class="card-body">
@@ -59,7 +57,6 @@ function createNewIdeas() {
 
 function enableButton() {
   if (userTitle.value != "" && userBody.value != "") {
-    console.log("hello")
     saveIdeasButton.classList.remove('disable');
   }
 }
@@ -70,7 +67,7 @@ function validateForm() {
   if (userTitle.value === "") {
     alert ("Title must be filled out");
     return false;
-  } else if (userBody.value == "") {
+  } else if (userBody.value === "") {
     alert ("Body must be filled out");
     return false;
   }
@@ -95,9 +92,11 @@ function favoriteCard() {
         if (!ideas[i].star) {
           ideas[i].star = true;
           event.target.src = "assets/FEE-M1_ideabox_redux_icons/star-active.svg";
+          event.target.alt = "Favorited"
         } else {
           ideas[i].star = false;
           event.target.src = "assets/FEE-M1_ideabox_redux_icons/star.svg";
+          event.target.alt = "Not Favorited"
         }
       }
     }
