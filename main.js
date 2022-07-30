@@ -44,9 +44,6 @@ function createNewIdeas() {
         <p>${ideas[i].body}</p>
       </div>
       <div class="comment-bar">
-        <button class="comment">
-          <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
-        </button>
       </div>
     </article>
     `;
