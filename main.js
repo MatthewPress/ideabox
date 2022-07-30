@@ -20,14 +20,14 @@ function saveIdeas() {
 
   ideas.push(newIdeas);
 
-  newTitle.value = "";
-  newBody.value = "";
+  newTitle.value = '';
+  newBody.value = '';
 
   createNewIdeas();
 }
 
 function createNewIdeas() {
-  cardBox.innerHTML = "";
+  cardBox.innerHTML = '';
   for (var i = 0; i < ideas.length; i++) {
     cardBox.innerHTML += `
     <article class="card" id="${ideas[i].id}">
@@ -56,7 +56,7 @@ function createNewIdeas() {
 }
 
 function enableButton() {
-  if (newTitle.value != "" && newBody.value != "") {
+  if (newTitle.value != '' && newBody.value != '') {
     saveIdeasButton.classList.remove('disable');
   }
 }
@@ -64,39 +64,39 @@ function enableButton() {
 function validateForm() {
   event.preventDefault();
 
-  if (newTitle.value === "") {
-    alert ("Title must be filled out");
+  if (newTitle.value === '') {
+    alert ('Title must be filled out');
     return false;
-  } else if (newBody.value === "") {
-    alert ("Body must be filled out");
+  } else if (newBody.value === '') {
+    alert ('Body must be filled out');
     return false;
   }
   saveIdeas();
 }
 
 function deleteCard() {
-  if (event.target.classList.contains("delete-icon")) {
+  if (event.target.classList.contains('delete-icon')) {
     for (var i = 0; i < ideas.length; i++) {
-      if (event.target.closest("article").id == ideas[i].id) {
+      if (event.target.closest('article').id == ideas[i].id) {
         ideas.splice(i, 1);
       }
     }
-    event.target.closest("article").remove();
+    event.target.closest('article').remove();
   }
 }
 
 function favoriteCard() {
-  if (event.target.classList.contains("star-icon")) {
+  if (event.target.classList.contains('star-icon')) {
     for (var i = 0; i < ideas.length; i++) {
-      if (event.target.closest("article").id == ideas[i].id) {
+      if (event.target.closest('article').id == ideas[i].id) {
         if (!ideas[i].star) {
           ideas[i].star = true;
-          event.target.src = "assets/FEE-M1_ideabox_redux_icons/star-active.svg";
-          event.target.alt = "Favorited"
+          event.target.src = 'assets/FEE-M1_ideabox_redux_icons/star-active.svg';
+          event.target.alt = 'Favorited';
         } else {
           ideas[i].star = false;
-          event.target.src = "assets/FEE-M1_ideabox_redux_icons/star.svg";
-          event.target.alt = "Not Favorited"
+          event.target.src = 'assets/FEE-M1_ideabox_redux_icons/star.svg';
+          event.target.alt = 'Not Favorited';
         }
       }
     }
