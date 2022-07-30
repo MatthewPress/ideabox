@@ -114,6 +114,7 @@ function favoriteCard() {
           event.target.alt = "Favorited";
         } else {
           ideas[i].star = false;
+          favIdeas.splice(i, 1);
           event.target.src = "assets/FEE-M1_ideabox_redux_icons/star.svg";
           event.target.alt = "Not Favorited";
         }
