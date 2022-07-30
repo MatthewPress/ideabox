@@ -3,10 +3,12 @@ var newTitle = document.querySelector('#new-title');
 var newBody = document.querySelector('#new-body');
 var saveIdeasButton = document.querySelector('.save-ideas-button');
 var cardsBox = document.querySelector('.cards-box');
-// var showFavsButton = document.querySelector('.show-favs-button');
+var showStarredButton = document.querySelector('.show-starred-button');
 
 // additional data to use
 var ideas = [];
+var favIdeas = [];
+var favsDisplayed = false;
 
 // event listeners
 window.addEventListener('load', getLocalStorage);
@@ -15,15 +17,16 @@ newBody.addEventListener('input', enableButton);
 saveIdeasButton.addEventListener('click', validateForm);
 cardsBox.addEventListener('click', deleteCard);
 cardsBox.addEventListener('click', favoriteCard);
-// showFavsButton.addEventListener('click', showFavs);
+showStarredButton.addEventListener('click', displayFavIdeas);
 
 // functions and event handlers (event targets)
 function getLocalStorage() {
   var retrievedIdeas = localStorage.getItem('localIdeas');
   var parsedIdeas = JSON.parse(retrievedIdeas);
+
   for (var i = 0; i < parsedIdeas.length; i++) {
     ideas.push(parsedIdeas[i]);
-    createNewIdeas(ideas[i]);
+    displayNewIdeas(ideas[i]);
   }
 }
 
@@ -37,7 +40,7 @@ function saveIdeas() {
   ideas.push(newIdea);
   saveIdeasLocal();
 
-  createNewIdeas(newIdea);
+  displayNewIdeas(newIdea);
 
   newTitle.value = "";
   newBody.value = "";
@@ -45,7 +48,7 @@ function saveIdeas() {
   saveIdeasButton.classList.add('disable');
 }
 
-function createNewIdeas(selectedIdea) {
+function displayNewIdeas(selectedIdea) {
   cardsBox.innerHTML +=
   `<article class="card" id="${selectedIdea.id}">
     <div class="card-header">
@@ -106,6 +109,7 @@ function favoriteCard() {
       if (event.target.closest("article").id == ideas[i].id) {
         if (!ideas[i].star) {
           ideas[i].star = true;
+          favIdeas.push(ideas[i]);
           event.target.src = "assets/FEE-M1_ideabox_redux_icons/star-active.svg";
           event.target.alt = "Favorited";
         } else {
@@ -114,6 +118,24 @@ function favoriteCard() {
           event.target.alt = "Not Favorited";
         }
       }
+    }
+  }
+}
+
+function displayFavIdeas() {
+  cardsBox.innerHTML = "";
+
+  if (!favsDisplayed) {
+    favsDisplayed = true;
+    showStarredButton.innerText = "Show All Ideas";
+    for (var i = 0; i < favIdeas.length; i++) {
+      displayNewIdeas(favIdeas[i]);
+    }
+  } else {
+    favsDisplayed = false;
+    showStarredButton.innerText = "Show Starred Ideas";
+    for (var j = 0; j < ideas.length; j++) {
+      displayNewIdeas(ideas[j]);
     }
   }
 }

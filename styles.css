@@ -32,7 +32,7 @@ h2 {
 }
 
 /* Font Sizes */
-.show-favs-button,
+.show-starred-button,
 #new-title,
 h2,
 .save-ideas-button {
@@ -59,7 +59,7 @@ label,
 }
 
 h1,
-.show-favs-button,
+.show-starred-button,
 .save-ideas-button,
 .comment {
   color: #E9E9F3;
@@ -79,7 +79,7 @@ header,
   background: #1F1F3D;
 }
 
-.show-favs-button,
+.show-starred-button,
 .comment,
 .comment-bar {
   background: #5356A4;
@@ -109,7 +109,7 @@ nav {
 }
 
 /* Button Pointers */
-.show-favs-button,
+.show-starred-button,
 .save-ideas-button,
 .search-button,
 .star,
@@ -131,11 +131,11 @@ header {
 
 h1,
 h3,
-.show-favs-button {
+.show-starred-button {
   margin: 20px;
 }
 
-.show-favs-button {
+.show-starred-button {
   width: 260px;
   height: 50px;
   margin-top: 0px;
