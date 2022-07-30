@@ -20,6 +20,7 @@ button {
   cursor: not-allowed !important;
   background-color: #4B4B6F !important;
 }
+
 /* Bold Fonts */
 header {
   font-family: 'Open Sans, Bold', sans-serif !important;
@@ -120,13 +121,13 @@ nav {
 
 /* Header */
 header {
-   height: 100%;
-   width: 300px;
-   position: fixed;
-   z-index: 1;
-   top: 0;
-   left: 0;
-   overflow-x: hidden;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
 }
 
 h1,
@@ -142,7 +143,6 @@ h3,
 }
 
 /* Form & Cards Box to account for Header */
-
 .form-box,
 .cards-box {
   margin-left: 300px;
