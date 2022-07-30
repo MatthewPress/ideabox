@@ -1,11 +1,15 @@
 class Idea {
-  constructor(title, body, star) {
+  constructor(title, body) {
     this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = star || false;
+    this.star = false;
   }
   updateIdea() {
-    this.star;// method will return idea's starred state (boolean)
+    if (this.star) {
+      this.star = false;
+    } else {
+      this.star = true;
+    }
   }
 }

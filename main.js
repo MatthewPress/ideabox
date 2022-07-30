@@ -9,50 +9,63 @@ var cardsBox = document.querySelector('.cards-box');
 var ideas = [];
 
 // event listeners
+window.addEventListener('load', getLocalStorage);
 newTitle.addEventListener('input', enableButton);
 newBody.addEventListener('input', enableButton);
 saveIdeasButton.addEventListener('click', validateForm);
 cardsBox.addEventListener('click', deleteCard);
 cardsBox.addEventListener('click', favoriteCard);
-// showFavsButton.addEventListener('click', showFavorited);
+// showFavsButton.addEventListener('click', showFavs);
 
 // functions and event handlers (event targets)
+function getLocalStorage() {
+  var retrievedIdeas = localStorage.getItem('localIdeas');
+  var parsedIdeas = JSON.parse(retrievedIdeas);
+  for (var i = 0; i < parsedIdeas.length; i++) {
+    ideas.push(parsedIdeas[i]);
+    createNewIdeas(ideas[i]);
+  }
+}
+
+function saveIdeasLocal() {
+  var stringifiedIdeas = JSON.stringify(ideas);
+  localStorage.setItem('localIdeas', stringifiedIdeas);
+}
+
 function saveIdeas() {
-  var newIdeas = new Idea(newTitle.value, newBody.value);
-  ideas.push(newIdeas);
+  var newIdea = new Idea(newTitle.value, newBody.value);
+  ideas.push(newIdea);
+  saveIdeasLocal();
+
+  createNewIdeas(newIdea);
 
   newTitle.value = "";
   newBody.value = "";
 
-  createNewIdeas(ideas);
+  saveIdeasButton.classList.add('disable');
 }
 
-function createNewIdeas(selectedIdeas) {
-  cardsBox.innerHTML = "";
-  for (var i = 0; i < selectedIdeas.length; i++) {
-    cardsBox.innerHTML +=
-    `<article class="card" id="${selectedIdeas[i].id}">
-      <div class="card-header">
-        <button class="star" title="Favorite">
-          <img class="star-icon" src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="Not Favorited" />
-        </button>
-        <button class="delete" title="Delete">
-          <img class="delete-icon" src="assets/FEE-M1_ideabox_redux_icons/delete.svg" alt="delete" />
-        </button>
-      </div>
-      <div class="card-body">
-        <h2>${selectedIdeas[i].title}</h2>
-        <p>${selectedIdeas[i].body}</p>
-      </div>
-      <div class="comment-bar">
-        <button class="comment">
-          <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
-        </button>
-      </div>
-    </article>`;
-  }
-
-  saveIdeasButton.classList.add('disable');
+function createNewIdeas(selectedIdea) {
+  cardsBox.innerHTML +=
+  `<article class="card" id="${selectedIdea.id}">
+    <div class="card-header">
+      <button class="star" title="Favorite">
+        <img class="star-icon" src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="Not Favorited" />
+      </button>
+      <button class="delete" title="Delete">
+        <img class="delete-icon" src="assets/FEE-M1_ideabox_redux_icons/delete.svg" alt="delete" />
+      </button>
+    </div>
+    <div class="card-body">
+      <h2>${selectedIdea.title}</h2>
+      <p>${selectedIdea.body}</p>
+    </div>
+    <div class="comment-bar">
+      <button class="comment">
+        <img src="assets/FEE-M1_ideabox_redux_icons/comment.svg" alt="add comment button" />
+      </button>
+    </div>
+  </article>`;
 }
 
 function enableButton() {
@@ -80,6 +93,7 @@ function deleteCard() {
     for (var i = 0; i < ideas.length; i++) {
       if (event.target.closest("article").id == ideas[i].id) {
         ideas.splice(i, 1);
+        saveIdeasLocal();
       }
     }
     event.target.closest("article").remove();
@@ -103,25 +117,3 @@ function favoriteCard() {
     }
   }
 }
-
-// function showFavorited() {
-//   var favIdeas = [];
-//   for (var i = 0; i < ideas.length; i++) {
-//     if (ideas[i].star) {
-//       favIdeas.push(ideas[i]);
-//     }
-//   }
-//   createNewIdeas(favIdeas);
-// }
-
-// this is saying, not only are we checking to see that the event target is 'are you there', we are making sure it's the right one selected
-// checking to see if all of the conditions are true before deleting
-
-
-
-// Iteration 3 -
-// will need to delete a new instance when delete button is pressed
-// need to remove the deleted card from the data model
-// and make sure it is removed from the DOM or view as well
-// utilizing event propogation to addEventListener on parent element of the cards
-// event targeting the child elements within -
