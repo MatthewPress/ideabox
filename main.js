@@ -1,6 +1,6 @@
 // querySelector variables
-var newTitle = document.querySelector('#new-title');
-var newBody = document.querySelector('#new-body');
+var userTitle = document.querySelector('#user-title');
+var userBody = document.querySelector('#user-body');
 var saveIdeasButton = document.querySelector('.save-ideas-button');
 var cardsBox = document.querySelector('.cards-box');
 var showStarredButton = document.querySelector('.show-starred-button');
@@ -12,8 +12,8 @@ var favsDisplayed = false;
 
 // event listeners
 window.addEventListener('load', getLocalStorage);
-newTitle.addEventListener('input', enableButton);
-newBody.addEventListener('input', enableButton);
+userTitle.addEventListener('input', enableButton);
+userBody.addEventListener('input', enableButton);
 saveIdeasButton.addEventListener('click', validateForm);
 cardsBox.addEventListener('click', deleteCard);
 cardsBox.addEventListener('click', favoriteCard);
@@ -26,7 +26,7 @@ function getLocalStorage() {
 
   for (var i = 0; i < parsedIdeas.length; i++) {
     ideas.push(parsedIdeas[i]);
-    displayNewIdeas(ideas[i]);
+    displayIdea(ideas[i]);
   }
 }
 
@@ -36,19 +36,19 @@ function saveIdeasLocal() {
 }
 
 function saveIdeas() {
-  var newIdea = new Idea(newTitle.value, newBody.value);
+  var newIdea = new Idea(userTitle.value, userBody.value);
   ideas.push(newIdea);
   saveIdeasLocal();
 
-  displayNewIdeas(newIdea);
+  displayIdea(newIdea);
 
-  newTitle.value = "";
-  newBody.value = "";
+  userTitle.value = "";
+  userBody.value = "";
 
   saveIdeasButton.classList.add('disable');
 }
 
-function displayNewIdeas(selectedIdea) {
+function displayIdea(selectedIdea) {
   cardsBox.innerHTML +=
   `<article class="card" id="${selectedIdea.id}">
     <div class="card-header">
@@ -72,7 +72,7 @@ function displayNewIdeas(selectedIdea) {
 }
 
 function enableButton() {
-  if (newTitle.value != "" && newBody.value != "") {
+  if (userTitle.value != "" && userBody.value != "") {
     saveIdeasButton.classList.remove('disable');
   }
 }
@@ -80,10 +80,10 @@ function enableButton() {
 function validateForm() {
   event.preventDefault();
 
-  if (newTitle.value === "") {
+  if (userTitle.value === "") {
     alert ("Title must be filled out");
     return false;
-  } else if (newBody.value === "") {
+  } else if (userBody.value === "") {
     alert ("Body must be filled out");
     return false;
   }
@@ -129,13 +129,13 @@ function displayFavIdeas() {
     favsDisplayed = true;
     showStarredButton.innerText = "Show All Ideas";
     for (var i = 0; i < favIdeas.length; i++) {
-      displayNewIdeas(favIdeas[i]);
+      displayIdea(favIdeas[i]);
     }
   } else {
     favsDisplayed = false;
     showStarredButton.innerText = "Show Starred Ideas";
     for (var j = 0; j < ideas.length; j++) {
-      displayNewIdeas(ideas[j]);
+      displayIdea(ideas[j]);
     }
   }
 }

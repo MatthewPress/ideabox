@@ -26,20 +26,20 @@ header {
 }
 
 label,
-#new-title,
+#user-title,
 h2 {
   font-weight: bold;
 }
 
 /* Font Sizes */
 .show-starred-button,
-#new-title,
+#user-title,
 h2,
 .save-ideas-button {
   font-size: 1.5em;
 }
 
-#new-body,
+#user-body,
 p,
 .search-bar {
   font-size: 1em;
@@ -51,8 +51,8 @@ label {
 
 /* Font Colors */
 label,
-#new-title,
-#new-body,
+#user-title,
+#user-body,
 .search-bar,
 .card-body {
   color: #1F1F3D;
@@ -158,19 +158,19 @@ form {
   align-items: center;
 }
 
-#new-title,
-#new-body,
+#user-title,
+#user-body,
 .save-ideas-button {
   width: 400px;
 }
 
-#new-title,
+#user-title,
 .save-ideas-button,
 .search-bar {
   height: 50px;
 }
 
-#new-body {
+#user-body {
   height: 100px;
 }
 
