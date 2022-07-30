@@ -1,6 +1,6 @@
 // querySelector variables
-var userTitle = document.querySelector('#user-title');
-var userBody = document.querySelector('#user-body');
+var newTitle = document.querySelector('#new-title');
+var newBody = document.querySelector('#new-body');
 var saveIdeasButton = document.querySelector('.save-ideas-button');
 var cardBox = document.querySelector('.cards-box');
 
@@ -8,20 +8,20 @@ var cardBox = document.querySelector('.cards-box');
 var ideas = [];
 
 // event listeners
-userTitle.addEventListener('input', enableButton);
-userBody.addEventListener('input', enableButton);
+newTitle.addEventListener('input', enableButton);
+newBody.addEventListener('input', enableButton);
 saveIdeasButton.addEventListener('click', validateForm);
 cardBox.addEventListener('click', deleteCard);
 cardBox.addEventListener('click', favoriteCard);
 
 // functions and event handlers (event targets)
 function saveIdeas() {
-  var newIdeas = new Idea(userTitle.value, userBody.value);
+  var newIdeas = new Idea(newTitle.value, newBody.value);
 
   ideas.push(newIdeas);
 
-  userTitle.value = "";
-  userBody.value = "";
+  newTitle.value = "";
+  newBody.value = "";
 
   createNewIdeas();
 }
@@ -56,7 +56,7 @@ function createNewIdeas() {
 }
 
 function enableButton() {
-  if (userTitle.value != "" && userBody.value != "") {
+  if (newTitle.value != "" && newBody.value != "") {
     saveIdeasButton.classList.remove('disable');
   }
 }
@@ -64,10 +64,10 @@ function enableButton() {
 function validateForm() {
   event.preventDefault();
 
-  if (userTitle.value === "") {
+  if (newTitle.value === "") {
     alert ("Title must be filled out");
     return false;
-  } else if (userBody.value === "") {
+  } else if (newBody.value === "") {
     alert ("Body must be filled out");
     return false;
   }
@@ -102,14 +102,3 @@ function favoriteCard() {
     }
   }
 }
-// this is saying, not only are we checking to see that the event target is 'are you there', we are making sure it's the right one selected
-// checking to see if all of the conditions are true before deleting
-
-
-
-// Iteration 3 -
-// will need to delete a new instance when delete button is pressed
-// need to remove the deleted card from the data model
-// and make sure it is removed from the DOM or view as well
-// utilizing event propogation to addEventListener on parent element of the cards
-// event targeting the child elements within -
