@@ -17,20 +17,20 @@ cardBox.addEventListener('click', favoriteCard);
 // functions and event handlers (event targets)
 function saveIdeas() {
   var newIdeas = new Idea(newTitle.value, newBody.value);
-
   ideas.push(newIdeas);
-
-  newTitle.value = '';
-  newBody.value = '';
-
-  createNewIdeas();
+  resetForm();
+  createNewIdeas(newIdeas);
 }
 
-function createNewIdeas() {
-  cardBox.innerHTML = '';
-  for (var i = 0; i < ideas.length; i++) {
-    cardBox.innerHTML += `
-    <article class="card" id="${ideas[i].id}">
+function resetForm() {
+  newTitle.value = '';
+  newBody.value = '';
+  saveIdeasButton.classList.add('disable');
+}
+
+function createNewIdeas(selectedIdea) {
+  cardBox.innerHTML += `
+    <article class="card" id="${selectedIdea.id}">
       <div class="card-header">
         <button class="star" title="Favorite">
           <img class="star-icon" src="assets/FEE-M1_ideabox_redux_icons/star.svg" alt="Not Favorited" />
@@ -40,17 +40,14 @@ function createNewIdeas() {
         </button>
       </div>
       <div class="card-body">
-        <h2>${ideas[i].title}</h2>
-        <p>${ideas[i].body}</p>
+        <h2>${selectedIdea.title}</h2>
+        <p>${selectedIdea.body}</p>
       </div>
       <div class="comment-bar">
       </div>
     </article>
     `;
   }
-
-  saveIdeasButton.classList.add('disable');
-}
 
 function enableButton() {
   if (newTitle.value != '' && newBody.value != '') {
@@ -61,13 +58,11 @@ function enableButton() {
 function validateForm() {
   event.preventDefault();
 
-  if (newTitle.value === '') {
-    alert ('Title must be filled out');
-    return false;
-  } else if (newBody.value === '') {
-    alert ('Body must be filled out');
+  if (newTitle.value === '' || newBody.value === '') {
+    alert ('Title and Body must be filled out');
     return false;
   }
+
   saveIdeas();
 }
 
@@ -86,12 +81,11 @@ function favoriteCard() {
   if (event.target.classList.contains('star-icon')) {
     for (var i = 0; i < ideas.length; i++) {
       if (event.target.closest('article').id == ideas[i].id) {
-        if (!ideas[i].star) {
-          ideas[i].star = true;
+        ideas[i].updateIdea();
+        if (ideas[i].star) {
           event.target.src = 'assets/FEE-M1_ideabox_redux_icons/star-active.svg';
           event.target.alt = 'Favorited';
         } else {
-          ideas[i].star = false;
           event.target.src = 'assets/FEE-M1_ideabox_redux_icons/star.svg';
           event.target.alt = 'Not Favorited';
         }
