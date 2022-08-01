@@ -20,26 +20,27 @@ button {
   cursor: not-allowed !important;
   background-color: #4B4B6F !important;
 }
+
 /* Bold Fonts */
 header {
   font-family: 'Open Sans, Bold', sans-serif !important;
 }
 
 label,
-#user-title,
+#new-title,
 h2 {
   font-weight: bold;
 }
 
 /* Font Sizes */
-.show-starred-ideas-button,
-#user-title,
+.show-favs-button,
+#new-title,
 h2,
 .save-ideas-button {
   font-size: 1.5em;
 }
 
-#user-body,
+#new-body,
 p,
 .search-bar {
   font-size: 1em;
@@ -51,15 +52,15 @@ label {
 
 /* Font Colors */
 label,
-#user-title,
-#user-body,
+#new-title,
+#new-body,
 .search-bar,
 .card-body {
   color: #1F1F3D;
 }
 
 h1,
-.show-starred-ideas-button,
+.show-favs-button,
 .save-ideas-button,
 .comment {
   color: #E9E9F3;
@@ -79,7 +80,7 @@ header,
   background: #1F1F3D;
 }
 
-.show-starred-ideas-button,
+.show-favs-button,
 .comment,
 .comment-bar {
   background: #5356A4;
@@ -109,7 +110,7 @@ nav {
 }
 
 /* Button Pointers */
-.show-starred-ideas-button,
+.show-favs-button,
 .save-ideas-button,
 .search-button,
 .star,
@@ -120,29 +121,28 @@ nav {
 
 /* Header */
 header {
-   height: 100%;
-   width: 300px;
-   position: fixed;
-   z-index: 1;
-   top: 0;
-   left: 0;
-   overflow-x: hidden;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
 }
 
 h1,
 h3,
-.show-starred-ideas-button {
+.show-favs-button {
   margin: 20px;
 }
 
-.show-starred-ideas-button {
+.show-favs-button {
   width: 260px;
   height: 50px;
   margin-top: 0px;
 }
 
 /* Form & Cards Box to account for Header */
-
 .form-box,
 .cards-box {
   margin-left: 300px;
@@ -158,19 +158,19 @@ form {
   align-items: center;
 }
 
-#user-title,
-#user-body,
+#new-title,
+#new-body,
 .save-ideas-button {
   width: 400px;
 }
 
-#user-title,
+#new-title,
 .save-ideas-button,
 .search-bar {
   height: 50px;
 }
 
-#user-body {
+#new-body {
   height: 100px;
 }
 
@@ -245,4 +245,5 @@ p {
 
 .comment-bar {
   align-self: end;
+  height: 40px;
 }
