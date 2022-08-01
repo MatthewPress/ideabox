@@ -150,7 +150,7 @@ h3,
 
 /* Form */
 form {
-  height: 400px;
+  height: 50vh;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -172,6 +172,10 @@ form {
 
 #new-body {
   height: 100px;
+}
+
+label {
+  margin-right: 337px;
 }
 
 input {
