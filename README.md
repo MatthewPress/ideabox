@@ -1,27 +1,30 @@
-## LinkedIns
-- Scott Gaines: www.linkedin.com/in/scottdgainesfe
-- Lee Young: www.linkedin.com/in/leah-young-17b148166
-- Matthew Press:
-## Tasks
-### Skeleton HTML
-X metadata
-X 3 sections [sidebar, form, cards box]
-X sidebar (header, filter starred ideas section, button)
-X form (title, body, button, search bar)
-X cards box (space holder)
-X cards (star button, delete button, title, body, comment button)
-### Rough CSS while modifying HTML
-- flexbox (cards)
-- grid
-- colors from spec
-- fonts from spec
-- icons from assets and spec
-- hidden
-### JS / Functionality while modifying HTML and CSS
-- querySelectors on anything we need from HTML
-- Save information (hang in there)
-- Display saved information (displaying cards) (hang in there)
-- Deleting (hang in there)
-- Class for Idea (id, title, body, star)
-- New ideas from the user should be turned into an object instance of the Idea Class and used to update the Data model
-- all ideas added to an array
+## Overview
+
+Ideabox is an app designed to save your ideas in an easily accessible format. Users are able to create new ideas by saving their custom ideas into separate cards which can then either be favorited or deleted.
+
+Ideabox was built by Lee Young, Matthew Press, and Scott Gaines from a previously-set comp provided by Turing School of Software and Design. It uses one html document (index.html), one css styling document (styles.css), two javascript documents (main.js and Idea.js), and an assets directory of svg images.
+
+![Preview Image](assets/app_images/ideabox-preview.png)
+![Preview Image](assets/app_images/ideabox-use.png)
+
+## Installation Steps
+
+1. Fork and clone this repo to your local machine.
+2. Type 'cd ideabox' to move into the root directory.
+3. type 'open index.html' to open the application in your browser.
+
+## Using the App
+
+1. Enter a title for your idea in the Title field.
+2. Enter a description of your idea in the Body field.
+3. Click the Save button to save your idea and display it to the screen.
+
+## Developer LinkedIns
+
+- Lee Young: https://www.linkedin.com/in/leah-young-17b148166
+- Matthew Press: https://www.linkedin.com/in/matthew-press-813961246/
+- Scott Gaines: https://www.linkedin.com/in/scottdgainesfe
+
+## Dev Reflections and Notes
+
+The project consisted of four iterations plus optional extensions. As a team, we successfully completed the first three iterations in full, including a full refactoring session. The original comp called for a few features that are not included in our final submission (eg: menu in the nav bar, a "Show Saved Ideas" button, and a comment button at the bottom of the cards). We included these in the initial version of the app, but in the interest of the user, removed them when refactoring as their functionality was not built out.
