@@ -10,8 +10,8 @@ Ideabox was built by Lee Young, Matthew Press, and Scott Gaines from a previousl
 ## Installation Steps
 
 1. Fork and clone this repo to your local machine.
-2. Type 'cd ideabox' to move into the root directory.
-3. type 'open index.html' to open the application in your browser.
+2. Run 'cd ideabox' in your command line to move into the root directory.
+3. Run 'open index.html' in your command line to open the application in your browser.
 
 ## Using the App
 
